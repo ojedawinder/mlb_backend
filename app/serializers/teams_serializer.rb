@@ -1,12 +1,6 @@
 class TeamsSerializer < ActiveModel::Serializer
-    attributes  :code,
+    attributes  :id,
                 :name,
-                :win,
-                :loss,
-                :away_win,
-                :home_win,
-                :away_loss,
-                :home_loss,
                 :division_id,
                 :venue_id,
                 :team_image
