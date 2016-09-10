@@ -1,0 +1,8 @@
+Tablas
+
+Team: id, name, desc, win, loss, away_win, home_win, away_loss, home_loss, division_id, venue_id.
+Game: id, gameday, home_time, original_date, day, home_team_id, away_team_id, team_id_win, team_id_loss, status.
+Linescore: id, e_home, e_away, r_home, r_away, h_home, h_away, game_id.
+Venue: id, name.
+League: id, name.
+Division: id, name, league_id.

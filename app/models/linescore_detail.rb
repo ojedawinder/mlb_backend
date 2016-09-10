@@ -1,0 +1,2 @@
+class LinescoreDetail < ApplicationRecord
+end

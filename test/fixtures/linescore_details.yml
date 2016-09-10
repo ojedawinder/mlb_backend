@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  linescore_id: 1
+  inning: 1
+  r_home: 1
+  r_away: 1
+
+two:
+  linescore_id: 1
+  inning: 1
+  r_home: 1
+  r_away: 1

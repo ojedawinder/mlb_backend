@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  e_home: 1
+  e_away: 1
+  r_home: 1
+  r_away: 1
+  h_home: 1
+  h_away: 1
+  game_id: 1
+
+two:
+  e_home: 1
+  e_away: 1
+  r_home: 1
+  r_away: 1
+  h_home: 1
+  h_away: 1
+  game_id: 1

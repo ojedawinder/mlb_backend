@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 1
+  name: MyString
+  win: 1
+  loss: 1
+  away_win: 1
+  home_win: 1
+  away_loss: 1
+  home_loss: 1
+  division_id: 1
+  venue_id: 1
+
+two:
+  code: 1
+  name: MyString
+  win: 1
+  loss: 1
+  away_win: 1
+  home_win: 1
+  away_loss: 1
+  home_loss: 1
+  division_id: 1
+  venue_id: 1
