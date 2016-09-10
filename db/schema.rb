@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160909170607) do
     t.integer  "code"
     t.string   "gameday"
     t.string   "home_time"
-    t.string   "original_date"
+    t.date     "original_date"
     t.string   "day"
     t.integer  "home_team_code"
     t.integer  "away_team_code"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20160909170607) do
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
-    t.integer  "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,16 +72,10 @@ ActiveRecord::Schema.define(version: 20160909170607) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.integer  "code"
     t.string   "name"
-    t.integer  "win"
-    t.integer  "loss"
-    t.integer  "away_win"
-    t.integer  "home_win"
-    t.integer  "away_loss"
-    t.integer  "home_loss"
     t.integer  "division_id"
     t.integer  "venue_id"
+    t.string   "team_image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

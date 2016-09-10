@@ -29,6 +29,7 @@ Rails.application.routes.draw do
         #get "download_client_itinerary_pdf", to: "clients#download_itinerary_pdf"
         #get "agency_info", to: "clients#agency_info"
         #get "client_comments", to: "clients#client_comments"
+        post "admin/start_load", to: "loaders#startLoadData"
       end
   end
 end
