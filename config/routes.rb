@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :mlb do
         get "all_games", to: "games#all_games"
-        post "stats_rivals", to: "games#getStatsRivals"
-
         get "all_teams", to: "teams#all_teams"
+
+        get "stats_rivals_by_year", to: "games#getStatsRivalsByYear"
+        post "stats_rivals_all_time", to: "games#getStatsRivalsAllTime"
         #put "trip_style/:trip_style_id", to: "clients#add_trip_style"
         #delete "trip_style/:trip_style_id", to: "clients#delete_trip_style"
         #put "trip_group/:trip_group_id", to: "clients#add_trip_group"
