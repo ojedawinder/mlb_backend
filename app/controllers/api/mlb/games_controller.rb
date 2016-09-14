@@ -36,6 +36,19 @@ class Api::Mlb::GamesController < ApplicationController
     end
   end
 
+  #GET/stats_rivals_avg_run_and_rhe_by_year
+  def getStatsRivalsAVGRunAndRHEByYear
+    team1 = params[:team1]
+    team2 = params[:team2]
+    year = params[:year]
+    @stats = Game.getStatsRivalsAVGRunAndRHEByYear team1, team2, year
+    if !@stats.nil?
+        render json: @stats, each_serializer: StatsRivalAvgRunAndRheSerializer
+    else
+        render status: :unprocessable_entity, json: errors_for(@stats)
+    end
+  end
+
 
 
 

@@ -3,6 +3,17 @@ require 'json'
 require 'date'
 
 class Loader
+
+  def self.createOriginalDate gameday
+    new_date = Date.new(2000,1,1)
+    array_gameday = gameday.split("_")
+    year = array_gameday[0]
+    month = array_gameday[1]
+    day = array_gameday[2]
+    new_date =  Date.new(year.to_i, month.to_i, day.to_i)
+    return new_date
+  end
+
   def self.createGame gameday, home_time, original_date, day, home_team_id, away_team_id, status, code, linescore
     r_home = linescore['r']['home']
     r_away = linescore['r']['away']
@@ -16,7 +27,7 @@ class Loader
     g = Game.new
     g.gameday = gameday
     g.home_time = home_time
-    g.original_date = Date.parse(original_date)
+    g.original_date = (  ( original_date=="" || original_date== nil ) ? createOriginalDate(gameday) : Date.parse(original_date) )
     g.day = day
     g.home_team_code =  home_team_id
     g.away_team_code = away_team_id
@@ -74,7 +85,7 @@ class Loader
         t.save!
       else
         t.venue_id = venue.id
-        t.save
+        t.save!
       end
     else
       if(t==nil)
@@ -141,7 +152,7 @@ class Loader
 
   def self.start s, e
     if(s.nil?)
-      s = Date.new(2007, 3, 26)
+      s = Date.new(2007, 3, 20)
     elsif(s.class.to_s=="String" && s!="")
       s = Date.parse(s)
     end
@@ -162,7 +173,7 @@ class Loader
   end
 
   def self.nextSeason date
-    return Date.new(date.year+1, 3,25)
+    return Date.new(date.year+1, 3,20)
   end
 
   def self.finish_date(start_date, end_date)

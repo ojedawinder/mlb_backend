@@ -16,6 +16,6 @@ module MlbData
     'Access-Control-Request-Method' => 'GET, PATCH, PUT, POST, OPTIONS, DELETE, HEAD',
     'Access-Control-Allow-Headers:' => 'Origin, X-Requested-With, Content-Type, Accept'
     }
-    allow_headers = 'Origin, Authorization, Accept, Content-Type, X-HTTP-Method-Override'
+    
   end
 end
