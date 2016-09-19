@@ -24,7 +24,7 @@ class Api::Mlb::GamesController < ApplicationController
     end
   end
 
-  #POST /stats_rivals_all_time
+  #GET /stats_rivals_all_time
   def getStatsRivalsAllTime
     team1 = params[:team1]
     team2 = params[:team2]
@@ -42,6 +42,18 @@ class Api::Mlb::GamesController < ApplicationController
     team2 = params[:team2]
     year = params[:year]
     @stats = Game.getStatsRivalsAVGRunAndRHEByYear team1, team2, year
+    if !@stats.nil?
+        render json: @stats, each_serializer: StatsRivalAvgRunAndRheSerializer
+    else
+        render status: :unprocessable_entity, json: errors_for(@stats)
+    end
+  end
+
+  #GET/stats_rivals_avg_run_and_rhe_by_year
+  def getStatsRivalsAVGRunAndRHEAllTime
+    team1 = params[:team1]
+    team2 = params[:team2]
+    @stats = Game.getStatsRivalsAVGRunAndRHEAllTime team1, team2
     if !@stats.nil?
         render json: @stats, each_serializer: StatsRivalAvgRunAndRheSerializer
     else

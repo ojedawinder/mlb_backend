@@ -48,10 +48,10 @@ class Game < ApplicationRecord
   end
 
   def self.getStatsRivalsAVGRunAndRHEAllTime team1, team2
-    Game.find_by_sql ['select avg(l.r_home + l.r_away) as "Total", avg(l.r_home+l.r_away+l.h_home+l.h_away+l.e_home+l.e_away)as "TOTAL_RHE" from games g, linescores l
+    Game.find_by_sql ['select avg(l.r_home + l.r_away) as "Total", ? as "home_team_code", ? as "away_team_code" ,avg(l.r_home+l.r_away+l.h_home+l.h_away+l.e_home+l.e_away)as "TOTAL_RHE" from games g, linescores l
                       where g.id = l.game_id and
                       (g.home_team_code = ? and g.away_team_code = ?) or (g.home_team_code = ? and g.away_team_code = ?)
-                       ',team1, team2, team2, team1, year]
+                       ',team1, team2,team1, team2, team2, team1]
 
   end
 

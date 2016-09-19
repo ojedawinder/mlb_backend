@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
         get "stats_rivals_by_year", to: "games#getStatsRivalsByYear"
         get "stats_rivals_avg_run_and_rhe_by_year", to: "games#getStatsRivalsAVGRunAndRHEByYear"
-        post "stats_rivals_all_time", to: "games#getStatsRivalsAllTime"
+        get "stats_rivals_all_time", to: "games#getStatsRivalsAllTime"
+        get "stats_rivals_avg_run_and_rhe_all_time", to: "games#getStatsRivalsAVGRunAndRHEAllTime"
         #put "trip_style/:trip_style_id", to: "clients#add_trip_style"
         #delete "trip_style/:trip_style_id", to: "clients#delete_trip_style"
         #put "trip_group/:trip_group_id", to: "clients#add_trip_group"

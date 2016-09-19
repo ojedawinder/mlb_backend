@@ -84,6 +84,7 @@ class Loader
         t.venue_id = venue.id
         t.save!
       else
+        t.division_id = division.id
         t.venue_id = venue.id
         t.save!
       end
